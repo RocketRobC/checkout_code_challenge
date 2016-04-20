@@ -4,7 +4,7 @@ Our request for global domination has prompted us to open a supermarket - we
 sell only three products:
 
 Product code | Name         | Price
------------------------------------------
+-------------|--------------|--------
 FR1          | Fruit tea    |  £3.11
 SR1          | Strawberries |  £5.00
 CF1          | Coffee       | £11.23
@@ -46,11 +46,8 @@ how we pass the rules? For example the "meal deal".
 Test data
 ---------
 
-Basket: FR1,SR1,FR1,FR1,CF1
-Total price expected: £22.45
+Basket: FR1,SR1,FR1,FR1,CF1 - Total price expected: £22.45
 
-Basket: FR1,FR1
-Total price expected: £3.11
+Basket: FR1,FR1 - Total price expected: £3.11
 
-Basket: SR1,SR1,FR1,SR1
-Total price expected: £16.61
+Basket: SR1,SR1,FR1,SR1 - Total price expected: £16.61
