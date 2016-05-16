@@ -9,7 +9,7 @@ class Checkout
 
 
   def scan(item)
-    puts item[:v]
+    # puts item[:v]
     (i = @items) || (i = [])
     @items = i << item
   end
