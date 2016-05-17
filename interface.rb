@@ -17,7 +17,10 @@ co.scan(PRODUCTS["SR1"])
 co.scan(PRODUCTS["SR1"])
 co.scan(PRODUCTS["FR1"])
 co.scan(PRODUCTS["FR1"])
+co.scan(PRODUCTS["FR1"])
 co.scan(PRODUCTS["SR1"])
+co.scan(PRODUCTS["FR1"])
+co.scan(PRODUCTS["FR1"])
 co.scan(PRODUCTS["FR1"])
 
 price = co.total
