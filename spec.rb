@@ -70,4 +70,25 @@ describe 'checkout' do
       expect(price).to eq(10.00)
     end
   end
+
+  context 'mixed purchases' do
+    it 'calculates a basket containing FR1,SR1,FR1,FR1,CF1 correctly' do
+      @co.scan(PRODUCTS['FR1'])
+      @co.scan(PRODUCTS['SR1'])
+      @co.scan(PRODUCTS['FR1'])
+      @co.scan(PRODUCTS['FR1'])
+      @co.scan(PRODUCTS['CF1'])
+      price = @co.total
+      expect(price).to eq(22.45)
+    end
+
+    it 'calculates a basket containing SR1,SR1,FR1,SR1 correctly' do
+      @co.scan(PRODUCTS['SR1'])
+      @co.scan(PRODUCTS['SR1'])
+      @co.scan(PRODUCTS['FR1'])
+      @co.scan(PRODUCTS['SR1'])
+      price = @co.total
+      expect(price).to eq(16.61)
+    end
+  end
 end

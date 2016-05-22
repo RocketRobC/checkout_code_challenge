@@ -15,24 +15,14 @@ class Rule
     b + t
   end
 
-
   private
-
-  # def buy_one_get_one_free(items)
-  #   discount_items = items.select { |i| (i[:c] == bogof) }
-  #   puts "1 get 1 free"
-  #   puts discount_items
-  #     discount_items.size % 2 == 0 ? discount_items.map { |i| i[:v] / 2 }.reduce(:+) : discount_items.map { |i| i[:v] / 2 }.reduce(:+) #NOTE
-  # end
 
   def buy_one_get_one_free(items)
     discount_items = items.select { |i| (i[:c] == bogof) }
     if discount_items.size >= 2
-      items = discount_items.each_slice(2).to_a
-      items.size > 2 ? items.delete_at(-1) : items.delete_at(1)
-      # puts items
-      # binding.pry
-      items.flatten.map { |i| i[:v] / 2.0 }.reduce(:+)
+      paired_items = discount_items.each_slice(2).to_a
+      paired_items.delete_at(-1) if paired_items.flatten.size % 2 == 1
+      paired_items.flatten.map { |i| i[:v] / 2.0 }.reduce(:+)
     else
       0
     end
@@ -40,7 +30,7 @@ class Rule
 
   def three_item_discount(items)
     discount_items = items.select { |i| (i[:c] == tid) }
-    discount_items.size >= 3 ? discount_items.length * 50 : 0
+    discount_items.size >= 3 ? discount_items.size * 50 : 0
   end
 
 end
