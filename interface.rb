@@ -5,7 +5,7 @@ require_relative "rule"
 PRODUCTS = {
   "FR1" => { c: "FR1", v: 311 },
   "SR1" => { c: "SR1", v: 500 },
-  "CF1" => { c: "CF1", v: 1123 },
+  "CF1" => { c: "CF1", v: 1123 }
 }
 
 pricing_rules = Rule.new(bogof: "FR1", tid: "SR1")

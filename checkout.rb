@@ -7,7 +7,6 @@ class Checkout
   end
 
   def scan(item)
-    # puts item[:v]
     (i = @items) || (i = [])
     @items = i << item
   end
