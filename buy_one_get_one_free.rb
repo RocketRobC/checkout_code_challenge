@@ -1,8 +1,8 @@
 require_relative 'rule'
 
-module BuyOneGetOneFree
+class BuyOneGetOneFree
 
-  def self.discount(items, bogof)
+  def discount(items, bogof)
     discount_items = items.select { |i| (i[:c] == bogof) }
     if discount_items.size >= 2
       paired_items = discount_items.each_slice(2).to_a

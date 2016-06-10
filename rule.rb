@@ -12,8 +12,8 @@ class Rule
   end
 
   def discounts(items)
-    b = BuyOneGetOneFree.discount(items, bogof) || 0
-    t = ThreeItemDiscount.discount(items, tid) || 0
+    b = BuyOneGetOneFree.new.discount(items, bogof) || 0
+    t = ThreeItemDiscount.new.discount(items, tid) || 0
     b + t
   end
 
